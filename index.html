@@ -6,19 +6,52 @@
 			padding: 0;
 			margin: 0;
 		}
+
 		canvas {
 			background: #013333 url(background.png);
 			display: block;
 			margin: 0 auto;
-			width: 100vw;
-			height: 100vh;
+
 		}
 	</style>
 	<title> WHY </title>
 </head>
 
 <body>
-	<canvas id="green" ></canvas>
+	<canvas id="green"></canvas>
+
+	// adding captain rogers
+
+	<script>
+		main()
+
+		function main() {
+			// PTS_COMMENT: asking the instance something (method on object)
+			// <OBJECT/INSTANCE>.<METHOD>(<VAR1>,<VAR2>)
+			var canvas = document.querySelector("#green");
+			var square = canvas.getContext('2d');
+
+			// captain's ship
+			// PTS_COMMENT : creating a new instance
+			// new <OBJECT_CLASS_NAME>(<CONSTRUCTOR ARGS>)
+			var capShip = new Image();
+			capShip.src = "player.png";
+			
+			// captain's location
+			var spriteX = 110;
+			var spriteY = 92;
+			var x = (canvas.width - spriteX) / 2;
+			var y = (canvas.height - spriteY) / 2;
+
+			// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+			square.clearRect(0, 0, canvas.width, canvas.height)
+			square.drawImage(capShip, x, y)
+
+			// git add -pA -- .
+
+		}
+
+	</script>
 </body>
 
 </html>
